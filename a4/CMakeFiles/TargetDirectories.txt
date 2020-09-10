@@ -1,0 +1,5 @@
+/home/oct/Desktop/a4/CMakeFiles/a4-ece650.dir
+/home/oct/Desktop/a4/minisat/CMakeFiles/minisat-lib-shared.dir
+/home/oct/Desktop/a4/minisat/CMakeFiles/minisat-lib-static.dir
+/home/oct/Desktop/a4/minisat/CMakeFiles/minisat_core.dir
+/home/oct/Desktop/a4/minisat/CMakeFiles/minisat_simp.dir

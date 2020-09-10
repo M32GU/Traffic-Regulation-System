@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oct/Desktop/2/a2-ece650.cpp
+iostream
+-
+list
+-
+string
+-
+cstdlib
+-
+vector
+-
+climits
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libminisat.a  CMakeFiles/minisat-lib-static.dir/utils/Options.cc.o CMakeFiles/minisat-lib-static.dir/utils/System.cc.o CMakeFiles/minisat-lib-static.dir/core/Solver.cc.o CMakeFiles/minisat-lib-static.dir/simp/SimpSolver.cc.o
+/usr/bin/ranlib libminisat.a

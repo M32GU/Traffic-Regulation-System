@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/minisat_simp.dir/simp/Main.cc.o  -o minisat -rdynamic libminisat.a /usr/local/lib/libz.so -Wl,-rpath,/usr/local/lib 

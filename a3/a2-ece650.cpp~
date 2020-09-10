@@ -1,0 +1,214 @@
+#include <iostream>
+#include <list>
+#include <string>
+#include <cstdlib>
+#include <vector>
+#include <climits>
+
+using namespace std;
+
+class Graph
+{
+
+public:
+    int V;
+    // Pointer to an array containing adjacency
+    list<int> *adj;
+    // function to add an edge to graph
+    void addEdge(int v, int w);
+
+    //function to print the Graph
+    void printGraph();
+
+    // prints BFS traversal from a given source s
+    bool BFS(int src, int dst, int pred[], int dist[]);
+
+    //shortest path from source to destination
+    void findShortestPath(int src, int dst);
+};
+
+void Graph::addEdge(int u, int v)
+{
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+}
+
+void Graph::printGraph()
+{
+    list<int>::iterator i;
+    for (int v = 0; v < V; ++v)
+    {
+        cout << "\n Adjacency list of vertex " << v << "\n head ";
+        for ( auto x : adj[v])
+        {
+           cout << "-> " << x;
+        }
+
+        cout << "\n";
+    }
+}
+
+bool Graph::BFS(int src, int dst, int pred[], int dist[])
+{
+  bool *visited = new bool[V];
+  for(int i = 0; i < V; i++){
+    visited[i] = false;
+    dist[i] = INT_MAX;
+    pred[i] = -1;
+  }
+
+  // Create a queue for BFS
+  list<int> queue;
+  // Mark the current node as visited and enqueue it
+  visited[src] = true;
+  queue.push_back(src);
+  dist[src] = 0;
+
+  // 'i' will be used to get all adjacent vertices of a vertex
+  list<int>::iterator i;
+
+  while(!queue.empty())
+   {
+      // Dequeue a vertex from queue and print it
+      src = queue.front();
+      queue.pop_front();
+
+      // Get all adjacent vertices of the dequeued vertex src.
+      //If a adjacent has not been visited, then mark it visited and enqueue it
+      for (i = adj[src].begin(); i != adj[src].end(); ++i)
+      {
+          if (!visited[*i])
+          {
+              visited[*i] = true;
+              dist[*i] = dist[src] + 1;
+              pred[*i] = src;
+              queue.push_back(*i);
+
+              if(*i == dst){
+                return true;
+              }
+          }
+      }
+   }
+   return false;
+}
+
+void Graph::findShortestPath(int s,int dest)
+{
+    // predecessor[i] array stores predecessor of i and distance array stores distance of i from s
+    int pred[V], dist[V];
+
+    if (BFS(s, dest, pred, dist) == false)
+    {
+    /*  for(int *a = pred ; *a ; ++a){
+        cout << *a << "\n" ;
+      }*/
+        cout << "Error: Given source and destination are not connected" << "\n";
+        return;
+    }
+
+    // vector path stores the shortest path
+    vector<int> path;
+    int crawl = dest;
+    path.push_back(crawl);
+
+    while (pred[crawl] != -1) {
+        path.push_back(pred[crawl]);
+        crawl = pred[crawl];
+    }
+    // printing path from source to destination
+      for (int i = path.size() - 1; i >= 0; i--){
+
+        if( i == 0){
+          cout << path[i];
+        }else{
+          cout << path[i] << "-";
+        }
+      }
+      cout << "\n";
+}
+
+void parseEdges(string edges, int vertices, unsigned first,unsigned second,unsigned third, Graph g){
+    while( edges.find('>') != string::npos ){
+
+      string v1 = edges.substr (first+1,second-first-1);
+      string v2 = edges.substr(second+1,third-second-1);
+      int start = atoi(v1.c_str());
+      int dest = atoi(v2.c_str());
+
+      if(start < 0 || start >= vertices || dest < 0 || dest >= vertices){
+        cout << "Error: do not exist node or path" << '\n';
+        for(int j = 0 ; j < vertices ; j++){
+          g.adj[j].clear();
+        }
+        break;
+      }else{
+        g.addEdge(start, dest);
+      }
+
+      edges.erase(first, third-first+2);
+
+      first = edges.find("<");
+      second = edges.find(",");
+      third = edges.find(">");
+  }
+}
+
+int main()
+{
+  string value;
+  string command;
+  string input_string;
+  int vertices;
+  string edges;
+  string path;
+  Graph g;
+
+  while(!cin.eof()){
+
+      getline (cin,input_string);
+      if(input_string.at(0) != 's'){
+      cout << input_string << endl;
+     }
+      unsigned space = input_string.find(" ");
+      command = input_string.substr(0,space);
+      value = input_string.substr(space+1,input_string.size());
+
+      if(command == "V"){
+        vertices = atoi(value.c_str());
+        g.V = vertices;
+        g.adj = new list<int>[vertices];
+      }else if(command == "E"){
+
+          for(int j = 0 ; j < vertices ; j++){
+            g.adj[j].clear();
+          }
+
+          //g.printGraph();
+          edges = value;
+          edges = edges.substr(1, edges.size() - 2);
+          edges = edges.append(",");
+
+          unsigned first = edges.find("<");
+          unsigned second = edges.find(",");
+          unsigned third = edges.find(">");
+
+          parseEdges(edges, vertices, first, second, third , g);
+
+      }else if(command == "s" || command == "S"){
+        path = value;
+        int src_v =  atoi((path.substr(0,path.find(" "))).c_str());
+        int dest_v =  atoi((path.substr(path.find(" ")+1, path.size())).c_str());
+
+        if(src_v < 0 || src_v >= vertices || dest_v < 0 || dest_v >= vertices){
+          cout << "Error: do not exist node or path" << '\n';
+        }else if(src_v == dest_v){
+          cout << 0 << "\n";
+        }else{
+          //g.printGraph();
+          g.findShortestPath(src_v,dest_v);
+        }
+      }
+      }
+    return 0;
+}

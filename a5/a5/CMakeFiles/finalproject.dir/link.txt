@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -Wall -pthread     CMakeFiles/finalproject.dir/finalproject.cpp.o  -o finalproject -rdynamic minisat/libminisat.a /usr/local/lib/libz.so -Wl,-rpath,/usr/local/lib 

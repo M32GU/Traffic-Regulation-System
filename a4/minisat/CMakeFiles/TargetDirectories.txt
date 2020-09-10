@@ -1,0 +1,4 @@
+/home/oct/Desktop/minisat/CMakeFiles/minisat-lib-shared.dir
+/home/oct/Desktop/minisat/CMakeFiles/minisat-lib-static.dir
+/home/oct/Desktop/minisat/CMakeFiles/minisat_core.dir
+/home/oct/Desktop/minisat/CMakeFiles/minisat_simp.dir

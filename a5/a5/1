@@ -1,0 +1,42 @@
+/home/oct/Desktop/a5/a4-ece650.cpp: In function ‘int dig(std::string)’:
+/home/oct/Desktop/a5/a4-ece650.cpp:24:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0;i < s.length();i++) {
+                                ^
+/home/oct/Desktop/a5/a4-ece650.cpp: In function ‘bool init(std::string)’:
+/home/oct/Desktop/a5/a4-ece650.cpp:33:23: warning: unused variable ‘r’ [-Wunused-variable]
+     int p = 0, q = 0, r = 0;
+                       ^
+/home/oct/Desktop/a5/a4-ece650.cpp: In function ‘void* reduction(void*)’:
+/home/oct/Desktop/a5/a4-ece650.cpp:88:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             for (int a = 0; a < Edge.size(); a += 2) {
+                                           ^
+/home/oct/Desktop/a5/a4-ece650.cpp:117:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+/home/oct/Desktop/a5/a4-ece650.cpp: In function ‘void* algorithm2(void*)’:
+/home/oct/Desktop/a5/a4-ece650.cpp:119:9: warning: unused variable ‘a’ [-Wunused-variable]
+     int a=1;
+         ^
+/home/oct/Desktop/a5/a4-ece650.cpp:125:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+/home/oct/Desktop/a5/a4-ece650.cpp: In function ‘void* algorithm3(void*)’:
+/home/oct/Desktop/a5/a4-ece650.cpp:127:9: warning: unused variable ‘a’ [-Wunused-variable]
+     int a=2;
+         ^
+/home/oct/Desktop/a5/a4-ece650.cpp:132:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+/home/oct/Desktop/a5/a4-ece650.cpp: In function ‘int main()’:
+/home/oct/Desktop/a5/a4-ece650.cpp:180:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                 for (int k = 0; k < result[i].size(); k++){
+                                                    ^
+/home/oct/Desktop/a5/a4-ece650.cpp:182:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+                     if(k<result[i].size()-1){
+                                           ^
+/home/oct/Desktop/a5/a4-ece650.cpp:138:20: warning: unused variable ‘tio’ [-Wunused-variable]
+     pthread_t t[3],tio;
+                    ^
+/home/oct/Desktop/a5/a4-ece650.cpp:140:9: warning: variable ‘ret’ set but not used [-Wunused-but-set-variable]
+     int ret,i,j;
+         ^

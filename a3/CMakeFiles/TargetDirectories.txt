@@ -1,0 +1,3 @@
+/home/oct/Desktop/2/CMakeFiles/a2-ece650.dir
+/home/oct/Desktop/2/CMakeFiles/a3-ece650.dir
+/home/oct/Desktop/2/CMakeFiles/rgen.dir

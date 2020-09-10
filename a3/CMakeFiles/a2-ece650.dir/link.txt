@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -Wall     CMakeFiles/a2-ece650.dir/a2-ece650.cpp.o  -o a2-ece650 -rdynamic 

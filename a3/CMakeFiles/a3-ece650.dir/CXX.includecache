@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oct/Desktop/2/a3-ece650.cpp
+iostream
+-
+unistd.h
+-
+sys/wait.h
+-
+vector
+-
+iostream
+-
+stdlib.h
+-
+

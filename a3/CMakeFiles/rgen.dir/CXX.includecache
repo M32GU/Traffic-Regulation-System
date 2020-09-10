@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oct/Desktop/2/geometry.hpp
+
+/home/oct/Desktop/2/rgen.cpp
+iostream
+-
+fstream
+-
+unistd.h
+-
+cstdlib
+-
+cstring
+-
+vector
+-
+map
+-
+string
+-
+cmath
+-
+algorithm
+-
+geometry.hpp
+/home/oct/Desktop/2/geometry.hpp
+
